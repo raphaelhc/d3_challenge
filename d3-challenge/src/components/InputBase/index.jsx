@@ -1,6 +1,6 @@
 import React from 'react'
 import { InputBaseStyled } from './style';
 
-const InputBase = ({placeholder}) => <InputBaseStyled placeholder={placeholder} />
+const InputBase = ({...props, placeholder}) => <InputBaseStyled {...props} placeholder={placeholder} />
 
 export default InputBase

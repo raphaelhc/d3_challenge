@@ -1,5 +1,5 @@
 import Paper from '@material-ui/core/Paper';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
 
 const PaperStyled = styled(Paper)`

@@ -1,4 +1,4 @@
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import AppBar from '@material-ui/core/AppBar';
 
 
@@ -6,7 +6,6 @@ const AppBarStyled = styled(AppBar)`
   &&{
     height: 70px;
     background-color: ${(props) => props.theme.dark.contrast};
-    position: relative;
   }
 `;
 
@@ -20,6 +19,7 @@ const TitleStyled = styled.div`
     }
     font-weight: 600;
     font-size: 20px;
+    justify-content: space-between;
 `;
 
 export { AppBarStyled, TitleStyled }

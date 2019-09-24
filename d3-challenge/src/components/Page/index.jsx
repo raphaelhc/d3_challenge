@@ -4,7 +4,9 @@ import { PageStyled } from './style'
 
 const Page = ({children}) => (
     <Fragment>
-        <AppBar position="static">Where in the world?</AppBar>
+        <AppBar position="static">
+            <div>Where in the world?</div>
+        </AppBar>
         <PageStyled>{children}</PageStyled>
     </Fragment>
 )

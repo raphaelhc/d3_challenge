@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import Page from './components/Page'
 
 import Home from './containers/Home'
+import Detail from './containers/Detail'
 import theme from './commons/theme'
 
 class App extends Component {
@@ -15,7 +16,7 @@ class App extends Component {
             <BrowserRouter>
                 <Switch>
                   <Route path="/" exact={true} component={() => <Home/>} />
-                  <Route path="/sobre" component={() => <div>oi2</div>} />
+                  <Route path="/:id" component={() => <Detail />} />
                 </Switch>
             </ BrowserRouter>
           </Page>
