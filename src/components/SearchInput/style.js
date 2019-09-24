@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const PaperStyled = styled(Paper)`
     && {
-        background-color: ${(props) => props.theme.dark.contrast};
+        background-color: ${(props) => props.theme[props.theme.selectedTheme].contrast};
         max-width: 400px;
     }
 `;

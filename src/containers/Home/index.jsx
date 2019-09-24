@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter } from "react-router-dom";
+import { withTheme } from 'styled-components';
 import PageContent from '../../components/PageContent'
 import SearchInput from '../../components/SearchInput'
 import CountriesAPI from '../../resourses/country'
@@ -90,4 +91,4 @@ const Home = (props) => {
     )
 }
 
-export default withRouter(Home)
+export default withRouter(withTheme(Home))

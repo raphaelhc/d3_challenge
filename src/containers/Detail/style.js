@@ -28,12 +28,12 @@ export const ImgStyled = styled.img`
 export const LabelStyled = styled.span`
     font-weight: 600;
     font-size: 14px;
-    color: ${(props) => props.theme.dark.color};
+    color: ${(props) => props.theme[props.theme.selectedTheme].color};
 `;
 
 export const ValueStyled = styled.span`
     font-size: 14px;
-    color: ${(props) => props.theme.dark.color};
+    color: ${(props) => props.theme[props.theme.selectedTheme].color};
     margin-left: 5px;
 `;
 
@@ -53,7 +53,7 @@ export const TitleStyled = styled.div`
     font-weight: 600;
     font-size: 20px;
     justify-content: space-between;
-    color: ${(props) => props.theme.dark.color};
+    color: ${(props) => props.theme[props.theme.selectedTheme].color};
     margin-bottom: 15px;
 `;
 

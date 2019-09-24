@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const IconButtonStyled = styled(IconButton)`
     && {
-        color: ${(props) => props.theme.dark.color} !important;
+        color: ${(props) => props.theme[props.theme.selectedTheme].color} !important;
     }
 `;
 

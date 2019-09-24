@@ -1,47 +1,12 @@
 import React from 'react';
-import theme from '../../../commons/theme'
+import { withTheme } from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '../../../components/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
-const StyledMenu = withStyles({
-  paper: {
-    backgroundColor: theme.dark.contrast,
-    color: theme.dark.color,
-    marginTop: '3px',
-    width: '100px'
-  },
-})(props => (
-  <Menu
-    elevation={0}
-    getContentAnchorEl={null}
-    anchorOrigin={{
-      vertical: 'bottom',
-      horizontal: 'center',
-    }}
-    transformOrigin={{
-      vertical: 'top',
-      horizontal: 'center',
-    }}
-    {...props}
-  />
-));
-
-const StyledMenuItem = withStyles(
-  {
-  root: {
-    '&:focus': {
-      backgroundColor: theme.dark.contrast,
-      '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.dark.color,
-      },
-    },
-  },
-})(MenuItem);
-
-export default function CustomizedMenus(props) {
+const CustomizedMenus = (props) => {
   const { onChange } = props
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -57,6 +22,41 @@ export default function CustomizedMenus(props) {
     onChange(value)
     handleClose()
   }
+
+  const StyledMenu = withStyles({
+    paper: {
+      backgroundColor: props.theme[props.theme.selectedTheme].contrast,
+      color: props.theme[props.theme.selectedTheme].color,
+      marginTop: '3px',
+      width: '100px'
+    },
+  })(props => (
+    <Menu
+      elevation={0}
+      getContentAnchorEl={null}
+      anchorOrigin={{
+        vertical: 'bottom',
+        horizontal: 'center',
+      }}
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'center',
+      }}
+      {...props}
+    />
+  ));
+  
+  const StyledMenuItem = withStyles(
+    {
+    root: {
+      '&:focus': {
+        backgroundColor: props.theme[props.theme.selectedTheme].contrast,
+        '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
+          color: props.theme[props.theme.selectedTheme].color,
+        },
+      },
+    },
+  })(MenuItem);
 
   return (
     <div {...props}>
@@ -94,3 +94,5 @@ export default function CustomizedMenus(props) {
     </div>
   );
 }
+
+export default withTheme(CustomizedMenus)
