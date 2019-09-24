@@ -14,7 +14,8 @@ import {
     GridStyled,
     TitleStyled,
     DataContent,
-    BorderCountriesContent
+    BordersContent,
+    BorderCountriesContent,
 } from './style'
 
 const Home = (props) => {
