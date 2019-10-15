@@ -1,10 +1,9 @@
 import React from 'react'
-import { LoadingStyled } from './style'
-import CircularProgress from '@material-ui/core/CircularProgress';
+import { LoadingStyled, CircularProgressStyled } from './style'
 
 const Loading = () => (
     <LoadingStyled>
-        <CircularProgress></CircularProgress>
+        <CircularProgressStyled></CircularProgressStyled>
     </LoadingStyled>
 )
 

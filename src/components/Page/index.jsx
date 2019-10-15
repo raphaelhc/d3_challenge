@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, memo } from 'react'
 import AppBar from '../AppBar';
 import { PageStyled } from './style'
 
@@ -11,4 +11,4 @@ const Page = ({children}) => (
     </Fragment>
 )
 
-export default Page
+export default memo(Page, (prev, next) => prev !== next)

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, memo } from 'react'
 import { withRouter } from "react-router-dom";
-import { withTheme } from 'styled-components';
 import PageContent from '../../components/PageContent'
 import SearchInput from '../../components/SearchInput'
 import CountriesAPI from '../../resourses/country'
@@ -18,6 +17,7 @@ import {
 } from './style'
 
 const Home = (props) => {
+    console.log(props)
     const { history } = props
     const [countries, setCountries] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -59,7 +59,9 @@ const Home = (props) => {
     }
 
     const renderCard = (item) => (
-        <Card key={item.numericCode} onClick={() => history.replace(`/${item.alpha3Code}`)}>
+        <Card 
+            key={item.numericCode}
+            onClick={() => history.replace(`/${item.alpha3Code}`)}>
             <ImgStyled src={item.flag} />
             <TitleStyled>{item.name}</TitleStyled>
             <DataContainer>
@@ -91,4 +93,4 @@ const Home = (props) => {
     )
 }
 
-export default withRouter(withTheme(Home))
+export default memo(withRouter(Home))
