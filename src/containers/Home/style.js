@@ -28,6 +28,7 @@ export const HeaderContainer = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-left: 5px;
 `;
 
 export const ImgStyled = styled.img`

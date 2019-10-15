@@ -6,8 +6,8 @@ const PageContentStyled = styled.div`
   height: 100%;
   background-color: ${(props) => props.theme[props.theme.selectedTheme].background};
   @media ${(props) => props.theme.device.mobile} {
-    padding: 20px 15px;
     margin-top: 80px;
+    padding: 0px;
   }
 `;
 
