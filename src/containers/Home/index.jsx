@@ -1,4 +1,5 @@
 import React, { useEffect, useState, memo } from 'react'
+import { withTheme } from 'styled-components';
 import { withRouter } from "react-router-dom";
 import PageContent from '../../components/PageContent'
 import SearchInput from '../../components/SearchInput'
@@ -13,11 +14,11 @@ import {
     ValueStyled,
     DataContainer,
     HeaderContainer,
-    SelectStyled
+    SelectStyled,
+    PlaceholderContainer
 } from './style'
 
 const Home = (props) => {
-    console.log(props)
     const { history } = props
     const [countries, setCountries] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
@@ -72,9 +73,14 @@ const Home = (props) => {
         </Card>
     )
 
+    const renderPlaceholder = () => 
+        <PlaceholderContainer>
+            Search without results
+        </PlaceholderContainer>
+
     const renderContent = () => (
         <CardsContainer>
-            {countries && countries.map((item) => renderCard(item))}
+            {countries.length ? countries.map((item) => renderCard(item)) : renderPlaceholder()}
         </CardsContainer>
     )
 
@@ -93,4 +99,4 @@ const Home = (props) => {
     )
 }
 
-export default memo(withRouter(Home))
+export default memo(withTheme(withRouter(Home)))

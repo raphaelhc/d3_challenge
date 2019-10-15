@@ -11,6 +11,7 @@ export const CardStyled = styled(Card)`
         margin-right: auto;
     }
     && {
+        display: inline-table;
         background-color: ${(props) => props.theme[props.theme.selectedTheme].contrast};
     }
     margin-top: 30px;
@@ -20,6 +21,7 @@ export const CardsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    height: 100%;
 `;
 
 export const HeaderContainer = styled.div`
@@ -76,4 +78,9 @@ export const ValueStyled = styled.span`
 export const DataContainer = styled.div`
     margin-left: 15px;
     margin-bottom: 15px;
+`;
+
+export const PlaceholderContainer = styled.div`
+    margin: auto;
+    color: ${(props) => props.theme[props.theme.selectedTheme].color};
 `;
